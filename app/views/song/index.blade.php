@@ -1,29 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>All Songs</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('song') }}">JamDB</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('song') }}">View All Songs</a></li>
-        <li><a href="{{ URL::to('song/create') }}">Create a Song</a>
-    </ul>
-</nav>
+@extends('layouts._master')
 
-<h1>All the Songs</h1>
+@section('title')
+All Songs
+@stop
 
-<!-- will be used to show any messages -->
-@if (Session::has('message'))
-    <div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
+@section('nav')
+    @include('partials.songnav')
+@stop
 
+@section('content')
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -55,6 +41,6 @@
     </tbody>
 </table>
 
-</div>
-</body>
-</html>
+@stop
+
+@stop

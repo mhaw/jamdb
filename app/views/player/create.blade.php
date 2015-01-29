@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Player</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('layouts._master')
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('player') }}">JamDB</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('player') }}">View All Players</a></li>
-        <li><a href="{{ URL::to('player/create') }}">Create a Player</a>
-    </ul>
-</nav>
+@section('title')
+    Create Player
+@stop
 
-<h1>Create a Player</h1>
+@section('nav')
+    @include('partials.playernav')
+@stop
+
+@section('content')
+    <h1>Create a Player</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
@@ -37,7 +29,7 @@
     {{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
+@stop
 
-</div>
-</body>
-</html>
+@stop
+

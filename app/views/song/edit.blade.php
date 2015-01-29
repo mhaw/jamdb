@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit - {{ $song->name }}</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('song') }}">JamDB</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('song') }}">View All Songs</a></li>
-        <li><a href="{{ URL::to('song/create') }}">Create a Song</a>
-    </ul>
-</nav>
+@extends('layouts._master')
 
+@section('title')
+Edit - {{ $song->name }}
+@stop
+
+@section('nav')
+    @include('partials.songnav')
+@stop
+
+@section('content')
 <h1>Edit {{ $song->name }}</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -39,6 +32,6 @@
 
 {{ Form::close() }}
 
-</div>
-</body>
-</html>
+@stop
+
+@stop

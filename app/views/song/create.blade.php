@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Song</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('layouts._master')
 
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('song') }}">JamDB</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('song') }}">View All Songs</a></li>
-        <li><a href="{{ URL::to('song/create') }}">Create a Song</a>
-    </ul>
-</nav>
+@section('title')
+    Add Song
+@stop
 
-<h1>Create a Song</h1>
+@section('nav')
+    @include('partials.songnav')
+@stop
+
+@section('content')
+<h1>Add a Song</h1>
 
 <!-- if there are creation errors, they will show here -->
 {{ HTML::ul($errors->all()) }}
@@ -38,6 +30,6 @@
 
 {{ Form::close() }}
 
-</div>
-</body>
-</html>
+@stop
+
+@stop
