@@ -36,5 +36,6 @@ Route::get('mysql-test', function() {
 });
 
 Route::resource('player', 'PlayerController');
+Route::post('player/addSong', 'PlayerController@addSong');
 
 Route::resource('song', 'SongController');

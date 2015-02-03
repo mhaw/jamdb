@@ -20,6 +20,15 @@ class CreateSongsTable extends Migration {
 
 			$table->string('name');
         		$table->string('artist');
+        		$table->boolean('gLead');
+        		$table->boolean('gRhythm');
+        		$table->boolean('gAcoustic');
+        		$table->boolean('Bass');
+        		$table->boolean('Drums');
+        		$table->boolean('vHarmony');
+        		$table->boolean('vLead');
+        		$table->boolean('keys');
+
         	});
 	}
 

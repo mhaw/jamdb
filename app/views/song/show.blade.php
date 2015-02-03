@@ -10,7 +10,7 @@
 @stop
 
 @section('content')
-<h1>Showing {{ $song->name }}</h1>
+<h1>{{ $song->name }}</h1>
 
     <div class="jumbotron text-center">
         <h2>{{ $song->name }}</h2>

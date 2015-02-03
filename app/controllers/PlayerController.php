@@ -69,8 +69,18 @@ class PlayerController extends \BaseController {
 	{
 		$player = Player::find($id);
 
+		$allSongs = Song::all();
+		$allSongsArr = array();
+		foreach($allSongs as $song)
+    		{
+			$allSongsArr[$song->id] = $song->name;	
+    		}
+		$songdata = array(
+     		'songs' => $allSongsArr
+     		);
+
 		return View::make('player.show')
-			->with('player', $player);
+			->with('player', $player)->with('songdata', $songdata);
 	}
 
 
@@ -84,8 +94,11 @@ class PlayerController extends \BaseController {
 	{
 		$player = Player::find($id);
 
+
 		return View::make('player.edit')
 			->with('player', $player);
+
+
 	}
 
 
@@ -135,6 +148,19 @@ class PlayerController extends \BaseController {
 
 		Session::flash('message', 'Successfully deleted!');
         	return Redirect::to('player');
+	}
+
+	public function addSong()
+	{
+
+		$player = Player::find(Input::get('player'));
+		$song = Song::find(Input::get('song'));
+
+		$part = Input::get('part');
+
+		$player->song()->save($song, array('part', $part));
+
+		//$player->song()->attach(Input::get('song'), array('part', Input::get('part')));
 	}
 
 
