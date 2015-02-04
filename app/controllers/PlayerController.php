@@ -158,7 +158,8 @@ class PlayerController extends \BaseController {
 
 		$part = Input::get('part');
 
-		$player->song()->save($song, array('part', $part));
+		$player->song()->save($song, array('part' => $part));
+		//$player->song()->save($song);
 
 		//$player->song()->attach(Input::get('song'), array('part', Input::get('part')));
 	}
