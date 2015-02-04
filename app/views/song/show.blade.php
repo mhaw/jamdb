@@ -17,6 +17,35 @@
         <p>
             <strong>Artist:</strong> {{ $song->artist }}<br>
         </p>
+        <h4>Required Parts</h4>
+        <ul style="list-style-type:none">
+        @if ($song->gLead)
+            <li>Guitar Lead</li>
+        @endif
+        @if ($song->gRhythm)
+            <li>Guitar - Rhythm</li>
+        @endif
+        @if ($song->gAcoustic)
+            <li>Guitar - Acoustic</li>
+        @endif
+        @if ($song->Bass)
+            <li>Bass</li>
+        @endif
+        @if ($song->Drums)
+            <li>Drums</li>
+        @endif
+        @if ($song->vHarmony)
+            <li>Vocal - Harmony</li>
+        @endif
+        @if ($song->vLead)
+            <li>Vocals - Lead</li>
+        @endif
+         @if ($song->keys)
+            <li>Keys</li>
+        @endif
+        </ul>
+
+
     </div>
 
     <div>

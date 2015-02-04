@@ -24,7 +24,35 @@ Edit - {{ $song->name }}
 
     <div class="form-group">
         {{ Form::label('artist', 'Artist') }}
-        {{ Form::email('artist', null, array('class' => 'form-control')) }}
+        {{ Form::text('artist', null, array('class' => 'form-control')) }}
+    </div>
+
+    <div>
+        <h4>Required Parts</h4>
+        {{ Form::label('gLead', 'Guitar - Lead') }}
+        {{ Form::checkbox('gLead', 'Yes') }}
+        <br>
+        {{ Form::label('gRhythm', 'Guitar - Rhythm') }}
+        {{ Form::checkbox('gRhythm', 'Yes') }}
+         <br>
+        {{ Form::label('gAcoustic', 'Guitar - Acoustic') }}
+        {{ Form::checkbox('gAcoustic', 'Yes') }}
+         <br>
+        {{ Form::label('Bass', 'Bass') }}
+        {{ Form::checkbox('Bass', 'Yes') }}
+         <br>
+        {{ Form::label('Drums', 'Drums') }}
+        {{ Form::checkbox('Drums', 'Yes') }}
+         <br>
+        {{ Form::label('vHarmony', 'Vocal - Harmony') }}
+        {{ Form::checkbox('vHarmony', 'Yes') }}
+         <br>
+        {{ Form::label('vLead', 'Vocal - Lead') }}
+        {{ Form::checkbox('vLead', 'Yes') }}
+         <br>
+        {{ Form::label('keys', 'Keys') }}
+        {{ Form::checkbox('keys', 'Yes') }}
+
     </div>
 
 

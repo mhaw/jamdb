@@ -50,6 +50,14 @@ class SongController extends \BaseController {
 	            $song = new Song;
 	            $song->name       = Input::get('name');
 	            $song->artist      = Input::get('artist');
+	            $song->gLead 	= (bool) Input::get('gLead');
+	            $song->gRhythm= (bool) Input::get('gRhythm');
+	            $song->gAcoustic= (bool) Input::get('gAcoustic');
+	            $song->Bass= (bool) Input::get('Bass');
+	            $song->Drums= (bool) Input::get('Drums');
+	            $song->vHarmony= (bool) Input::get('vHarmony');
+	            $song->vLead 	= (bool) Input::get('vLead');
+	            $song->keys = (bool) Input::get('keys');
 	            $song->save();
 
 	            // redirect
@@ -113,6 +121,14 @@ class SongController extends \BaseController {
 	            $song = Song::find($id);
 	            $song->name       = Input::get('name');
 	            $song->artist      = Input::get('artist');
+	            $song->gLead 	= (bool) Input::get('gLead');
+	            $song->gRhythm= (bool) Input::get('gRhythm');
+	            $song->gAcoustic= (bool) Input::get('gAcoustic');
+	            $song->Bass= (bool) Input::get('Bass');
+	            $song->Drums= (bool) Input::get('Drums');
+	            $song->vHarmony= (bool) Input::get('vHarmony');
+	            $song->vLead 	= (bool) Input::get('vLead');
+	            $song->keys = (bool) Input::get('keys');
 	            $song->save();
 
 	            // redirect
