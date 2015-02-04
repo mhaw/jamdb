@@ -79,6 +79,8 @@ class PlayerController extends \BaseController {
      		'songs' => $allSongsArr
      		);
 
+
+
 		return View::make('player.show')
 			->with('player', $player)->with('songdata', $songdata);
 	}
@@ -159,9 +161,8 @@ class PlayerController extends \BaseController {
 		$part = Input::get('part');
 
 		$player->song()->save($song, array('part' => $part));
-		//$player->song()->save($song);
-
-		//$player->song()->attach(Input::get('song'), array('part', Input::get('part')));
+		
+		return Redirect::back()->with('message','Song added!');
 	}
 
 
